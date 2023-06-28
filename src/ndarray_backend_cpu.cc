@@ -366,8 +366,6 @@ namespace needle {
              *   n: columns of a / rows of b
              *   p: columns of b / out
              */
-
-
             for (int i = 0; i < m; i++) {
                 for (int j = 0; j < p; ++j) {
                     int r = i * p + j;

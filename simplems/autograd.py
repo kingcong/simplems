@@ -401,7 +401,6 @@ def find_topo_sort(node_list: List[Value]) -> List[Value]:
     after all its predecessors are traversed due to post-order DFS, we get a topological
     sort.
     """
-    
     # 0: 未访问, 1: 临时访问, 2: 永久访问
     visited = dict()
     # init
@@ -409,17 +408,14 @@ def find_topo_sort(node_list: List[Value]) -> List[Value]:
         visited[node] = 0
 
     topo_order = []
-
     for node in node_list:
         if visited[node] == 0:
             topo_sort_dfs(node, visited, topo_order)
-
     return topo_order
 
 
 def topo_sort_dfs(node, visited, topo_order):
     """Post-order DFS"""
-    
     if visited[node] == 2:
         return
     visited[node] = 1

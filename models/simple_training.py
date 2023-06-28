@@ -1,10 +1,6 @@
 import sys
 sys.path.append('./')
-import simplems as ndl
-import simplems.nn as nn
-from simplems import backend_ndarray as nd
 from models import *
-import time
 
 device = ndl.cpu()
 
@@ -101,7 +97,6 @@ def evaluate_cifar10(model, dataloader, loss_fn=nn.SoftmaxLoss):
         avg_loss: average loss over dataset
     """
     np.random.seed(4)
-
     test_acc, test_loss = epoch_general_cifar10(dataloader=dataloader, model=model)
     return test_acc, test_loss
     
@@ -227,7 +222,6 @@ def evaluate_ptb(model, data, seq_len=40, loss_fn=nn.SoftmaxLoss,
         dtype=dtype
     )
     return avg_acc, avg_loss
-    
 
 
 if __name__ == "__main__":

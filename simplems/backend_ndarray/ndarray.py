@@ -248,7 +248,6 @@ class NDArray:
 
         
         # return self.as_strided(new_shape, NDArray.compact_strides(new_shape))
-
         origin_size = self.size
         new_size = prod(new_shape)
         if origin_size != new_size:
@@ -284,8 +283,6 @@ class NDArray:
             to the same memory as the original NDArray (i.e., just shape and
             strides changed).
         """
-
-        
         new_shape = [0 for _ in range(self.ndim)]
         new_strides = [0 for _ in range(self.ndim)]
 
@@ -460,7 +457,6 @@ class NDArray:
             )
 
     ### Collection of elementwise and scalar function: add, multiply, boolean, etc
-
     def ewise_or_scalar(self, other, ewise_func, scalar_func):
         """Run either an elementwise or scalar version of a function,
         depending on whether "other" is an NDArray or scalar
@@ -682,8 +678,6 @@ class NDArray:
         )
 
         return arr
-        
-
 
 
 def array(a, dtype="float32", device=None):
